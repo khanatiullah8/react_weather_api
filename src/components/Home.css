@@ -1,0 +1,172 @@
+/* common styling for all  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+span { display: inline-block; }
+li { list-style: none; }
+
+img {
+  width: 100%;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.wrapper {
+  max-width: 1366px;
+  width: 100%;
+  padding: 10px 2%;
+  margin: 0 auto;
+}
+
+/* main styling start here */
+.weather .wrapper {
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.weather-card {
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0,.1);
+  color: #fff;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.weather-title {
+  color: #fff; filter:
+  drop-shadow(0 0 5px #000);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.input-search {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,.3);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+}
+
+.input-search::placeholder {
+  color: #ccc;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.degree > * {
+  font-size: 46px;
+  font-weight: 600;
+}
+
+.date { font-size: 14px; }
+
+.city {
+  font-size: 26px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.type img { width: 60px; }
+
+.type span {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.weather-extra {
+  border-radius: 5px;
+  display: flex;
+  background-color: rgba(0,0,0,.3);
+  flex-direction: column;
+  gap: 5px;
+}
+
+.weather-extra li {
+  padding: 7px 10px;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weather-extra li:last-child { border-bottom: none; }
+.weather-extra > * > *:first-child { text-transform: capitalize; }
+
+.weather-extra > * > *:last-child {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* next five days styling */
+
+.weather-forecast {
+  min-width: 100%;
+  border-radius: 5px;
+  display: flex;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0,0,0,.1);
+  color: #222;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.weather-forecast .degree > * { font-size: 24px; }
+.weather-forecast .type img { width: 45px; }
+
+.next-five-days {
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px 5px;
+  background-color: rgba(255,255,255,.3);
+}
+
+/* media query starts here */
+@media only screen and (max-width: 1024px) {
+  .weather-card { width: 60%; }
+}
+
+@media only screen and (max-width: 767px) {
+  .weather-card { width: 80%; }
+
+  .weather-forecast {
+    width: 100%;
+    overflow-x: scroll;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .weather-forecast::-webkit-scrollbar {
+    display: none;
+    overflow: hidden;
+  }
+
+  .weather-forecast > * {
+    min-width: 150px;
+    margin: 10px;
+  }
+
+  .weather-forecast > *:not(:last-child) { margin-right: 0; }
+}
+
+@media only screen and (max-width: 540px) {
+  .weather-card { width: 100%; }
+}
